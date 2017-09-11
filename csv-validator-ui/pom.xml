@@ -8,7 +8,7 @@
         <relativePath>../csv-validator-parent</relativePath>
     </parent>
 
-    <artifactId>csv-validator-ui</artifactId>
+    <artifactId>csv-validator-ui_${scala.version}</artifactId>
     <packaging>jar</packaging>
 
     <name>csv-validator-ui</name>
@@ -137,12 +137,12 @@
         <!-- TODO should depend on just csv-validator-core and NOT csv-validator-cmd -->
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>csv-validator-cmd</artifactId>
+            <artifactId>csv-validator-cmd_${scala.version}</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>csv-validator-core</artifactId>
+            <artifactId>csv-validator-core_${scala.version}</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -8,7 +8,7 @@
         <relativePath>../csv-validator-parent</relativePath>
     </parent>
 
-    <artifactId>csv-validator-cmd</artifactId>
+    <artifactId>csv-validator-cmd_${scala.version}</artifactId>
     <packaging>jar</packaging>
 
     <name>csv-validator-cmd</name>
@@ -131,7 +131,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>csv-validator-core</artifactId>
+            <artifactId>csv-validator-core_${scala.version}</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
