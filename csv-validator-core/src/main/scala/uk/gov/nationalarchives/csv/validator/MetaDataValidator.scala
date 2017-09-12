@@ -133,10 +133,10 @@ trait MetaDataValidator {
         }
 
     } either match {
-      case Right(metadataValidation) =>
+      case ExtractedEither(Right(metadataValidation)) =>
         metadataValidation
 
-      case Left(ts) =>
+      case ExtractedEither(Left(ts)) =>
         //TODO(AR) emit all errors not just first!
         FailMessage(ValidationError, ts(0).toString).failureNel[Any]
 //      ts.toList.map(t => FailMessage(ValidationError, t.toString).failureNel[Any]).sequence[MetaDataValidation, Any]
@@ -258,9 +258,9 @@ trait MetaDataValidator {
       reader =>
         fn(reader)
     }.either match {
-      case Left(ioError) =>
+      case ExtractedEither(Left(ioError)) =>
         throw ioError(0)
-      case Right(result) =>
+      case ExtractedEither(Right(result)) =>
         result
     }
   }

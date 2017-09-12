@@ -371,7 +371,7 @@ case class ChecksumRule(rootPath: ArgProvider, file: ArgProvider, algorithm: Str
           ("sha384", () => hash.sha384),
           ("sha512", () => hash.sha512)
         )
-        hashes(algorithm.toLowerCase().replace("-", ""))()
+        hashes(algorithm.toLowerCase().replace("-", ""))().asInstanceOf[Process1[scodec.bits.ByteVector, scodec.bits.ByteVector]]
       }
 
       val bufSize = 16384 //16KB
